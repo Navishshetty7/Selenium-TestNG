@@ -1,11 +1,11 @@
-package com.automationexercise.pages;
-
+package pages;
+import utils.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+public class HomePage extends BasePage{
     WebDriver driver;
 
     @FindBy(css = "a[href='/products']")
@@ -14,18 +14,15 @@ public class HomePage {
     @FindBy(css = "a[href='/login']")
     WebElement signupLoginButton;
 
+    @FindBy(xpath = "//*[@id='email']")
+    WebElement emailInput;
+
     public HomePage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public ProductsPage clickProducts() {
-        productsButton.click();
-        return new ProductsPage(driver);
-    }
-
-    public LoginPage clickSignupLogin() {
-        signupLoginButton.click();
-        return new LoginPage(driver);
+    public void enterEmail(String email) {
+        emailInput.sendKeys(email);
     }
 }
