@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="MYTEST">
+<suite name="LOGINTEST">
     <test name="RUN MY TESTS">
         <classes>
-            <class name="demotestng.Homepage"></class>
+            <class name="demotestng.Loginpagetest"></class>
         </classes>
     </test>
 </suite>

@@ -6,41 +6,33 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
 public class BaseTest {
-
     protected WebDriver driver;
 
-    @BeforeMethod
-    public void setup() {
-        // Set up the ChromeDriver using WebDriverManager
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-
-        // Maximize the browser window
-        driver.manage().window().maximize();
-
-        // Set an implicit wait to handle element loading
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        // Navigate to the application URL
-        driver.get("https://alpha.curbpos.com/login");
-    }
-
-//    @AfterMethod
-//    public void teardown() {
-//        // Close the browser if the driver is not null
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
     public boolean isElementPresent(By locator) {
         try {
             driver.findElement(locator);
             return true;
         } catch (NoSuchElementException e) {
             return false;
+        }
+    }
+
+    @BeforeClass
+    public void setup() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get("https://automationexercise.com/");
+    }
+
+    @AfterClass
+    public void teardown() {
+        if (driver != null) {
+            driver.quit();
         }
     }
 }

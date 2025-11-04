@@ -1,4 +1,6 @@
 package pages;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,20 +11,28 @@ public class HomePage extends BasePage{
     WebDriver driver;
 
     @FindBy(css = "a[href='/products']")
-    WebElement productsButton;
+    public WebElement productsButton;
 
     @FindBy(css = "a[href='/login']")
-    WebElement signupLoginButton;
+    public WebElement signupLoginButton;
 
     @FindBy(xpath = "//*[@id='email']")
-    WebElement emailInput;
+    public WebElement emailInput;
 
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
-
-    public void enterEmail(String email) {
-        emailInput.sendKeys(email);
+    public void clickElementBySelectorone(By locator) {
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        element.click();
     }
+    public void clickSignupLogin() {
+        // You can now safely use the initialized element
+        signupLoginButton.click();
+    }
+
+//    public void enterEmail(String email) {
+//        emailInput.sendKeys(email);
+//    }
 }
