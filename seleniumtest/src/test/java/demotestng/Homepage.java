@@ -45,14 +45,10 @@ public class Homepage {
         String actualTitle = driver.getTitle();
         assert actualTitle.equals(expectedTitle);
     }
-    @Test(priority = 1)
-    public void Home(){
-
-    }
-    public void newUserSignValidtwo(){
-
-
-    }
+//    @Test(priority = 1)
+//    public void Home(){
+//
+//    }
 
 
 //    @Test(priority = 1)

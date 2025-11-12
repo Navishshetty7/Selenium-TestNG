@@ -38,12 +38,7 @@ public class Loginpagetest extends BaseTest{
         Assert.assertEquals(head_text, expHeadText, "Verification Header text did not match.");
         loginPage.enterName(Name);
         loginPage.enterEmail(Email);
-        //driver.findElement(By.xpath("//input[@type='text' and @data-qa='signup-name']")).sendKeys(Name);
-        //driver.findElement(By.xpath("//input[@type='email' and @data-qa='signup-email']")).sendKeys(Email);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        By elementLocator = By.xpath("//button[@data-qa='signup-button']");
-        WebElement elementToClick = wait.until(ExpectedConditions.elementToBeClickable(elementLocator));
-        elementToClick.click();
-        //Assert.assertTrue();
+        loginPage.clickSignUp();
     }
+
 }

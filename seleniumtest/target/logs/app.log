@@ -1,0 +1,9 @@
+2025-11-04 03:36:52.320 [main] INFO  pages.LoginPage - Entering name 'TestUserOne' into field
+2025-11-04 03:36:52.686 [main] INFO  pages.LoginPage - Entering Email 'user.one@example.com' into field
+2025-11-04 03:36:53.234 [main] INFO  pages.LoginPage - Successfully clicked the SignUp button.
+2025-11-04 03:36:58.210 [main] INFO  pages.LoginPage - Entering name 'TestUserTwo' into field
+2025-11-04 03:36:58.577 [main] INFO  pages.LoginPage - Entering Email 'user.two@example.com' into field
+2025-11-04 03:37:01.726 [main] INFO  pages.LoginPage - Successfully clicked the SignUp button.
+2025-11-04 03:37:03.232 [main] INFO  pages.LoginPage - Entering name 'TestUserThree' into field
+2025-11-04 03:37:03.310 [main] INFO  pages.LoginPage - Entering Email 'user.three@example.com' into field
+2025-11-04 03:37:04.649 [main] INFO  pages.LoginPage - Successfully clicked the SignUp button.
